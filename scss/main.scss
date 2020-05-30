@@ -151,6 +151,12 @@ body {
     100% { transform: scale(1); }
 }
 
+@media only screen and (max-width: 450px) {
+    .container__images {
+        padding-top: 50vh;
+    }
+}
+
 
 
 
