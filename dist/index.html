@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
+    <title>La quote du biscuit</title>
+</head>
+<body>
+
+    <div id="app">
+        
+            <main class="container">
+                <transition name="leftFade">
+                    <h1 v-if="imageIsVisible"> 
+                        <span>craque ton</span>
+                        <span>proverbe intérieur</span>
+
+                    </h1>
+                </transition>
+
+                <transition name="bottomFade">
+                    <div v-show="imageIsVisible" class="container__images" v-on:click="increaseClick(); playSound('audio/crack.mp3')">
+                        <img class="static" v-show="activeClick0" src="img/click0.png" alt="biscuit">
+                        <img v-show="activeClick1" src="img/click1.png" alt="biscuit">
+                        <img v-show="activeClick2" src="img/click2.png" alt="biscuit">
+                        <img v-show="activeClick3" src="img/click3.png" alt="biscuit">
+                    </div>
+                </transition>
+            </main>
+        
+
+        <transition name="fade">
+            <div class="container__quote" v-if="quoteIsActive">
+                <p>{{ chosenQuote }}</p>
+            </div>
+        </transition>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
