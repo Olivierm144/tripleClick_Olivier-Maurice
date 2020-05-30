@@ -1,15 +1,10 @@
 @import 'config';
 
 body {
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     font-family: 'Baloo Paaji', cursive;
     height: 100vh;
     overflow: hidden;
-
-
-
 }
 
 .container {
@@ -27,9 +22,9 @@ body {
         text-transform: uppercase;
         text-align: center;
         font-size: 3rem;
-        color: #2193b0;
+        color: white;
         padding: 5rem;
-        text-shadow: 2px 2px 4px white;
+        text-shadow: 2px 2px 4px #4691FA;
         line-height: 3rem;
     }
 
@@ -57,19 +52,21 @@ body {
     }
 
     &__quote {
-        z-index: 4;
-        padding: 1rem;
-        position: absolute;
+        position: absolute; 
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        line-height: 2rem;
-        text-align: center;
+        width: 100%;
         font-size: 1.5rem;
-        color: red;
-        width: 50%;
-        border-radius: 20px;  
-        background: white;    
+        user-select: none;
+        
+        &-inner {
+            margin: 0 auto;
+            border-radius: 20px; 
+            padding: 1rem;
+            width: 50%;
+            background: white;
+            text-align: center;
+            color: #FF5660;
+        }
     }
 
 }
@@ -83,19 +80,9 @@ body {
 }
 
 @keyframes goToBottom {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    60% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(500px);
-        opacity: 0;
-
-    }
-
+    0%   { }
+    85%   { opacity: 1;}
+    100%  { opacity: 0;}
 }
 
 @keyframes goToTop {
@@ -140,7 +127,7 @@ body {
 
 
 .fade-enter-active {
-    animation: expandQuote 3s;
+    animation: expandQuote 2s;
 }
 
 .fade-leave-active {
@@ -148,8 +135,14 @@ body {
 }
 
 @keyframes expandQuote {
-    0%   { opacity: 0;}
-    100%  { opacity: 1;}
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      to {
+        opacity: 1;
+        transform: scaleX(1);
+      }
 }
 
 @keyframes bounce {

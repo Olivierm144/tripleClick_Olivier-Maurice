@@ -10,13 +10,11 @@
 <body>
 
     <div id="app">
-        
             <main class="container">
                 <transition name="leftFade">
                     <h1 v-if="imageIsVisible"> 
-                        <span>craque ton</span>
-                        <span>proverbe intérieur</span>
-
+                        <span>Craque ton</span><br>
+                        <span>destin caché</span>
                     </h1>
                 </transition>
 
@@ -25,7 +23,7 @@
                         <img class="static" v-show="activeClick0" src="img/click0.png" alt="biscuit">
                         <img v-show="activeClick1" src="img/click1.png" alt="biscuit">
                         <img v-show="activeClick2" src="img/click2.png" alt="biscuit">
-                        <img v-show="activeClick3" src="img/click3.png" alt="biscuit">
+                        <img :style="{cursor: 'default'}" v-show="activeClick3" src="img/click3.png" alt="biscuit">
                     </div>
                 </transition>
             </main>
@@ -33,12 +31,15 @@
 
         <transition name="fade">
             <div class="container__quote" v-if="quoteIsActive">
-                <p>{{ chosenQuote }}</p>
+                <div class="container__quote-inner">
+                    <p>{{ chosenQuote }}</p>
+                </div>
             </div>
         </transition>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="http://underscorejs.org/underscore-min.js" defer></script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

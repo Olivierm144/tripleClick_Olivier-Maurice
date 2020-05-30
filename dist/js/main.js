@@ -10,15 +10,18 @@ const app = new Vue({
         quoteIsActive: false,
         imageIsVisible: true,
         listQuotes: [
-            'En septembre, tu seras peut-être déconfiné. Ou pas.',
+            'En septembre, tu seras peut-être déconfiné. Ou pas...',
             'Ta vie se résume à remplir ta timesheet. Tous les jours.',
-            'Tu aimerais un negroni sur une terrasse? Mais non.',
-            'Le chat est ton meilleur ami.',
+            'Tu finiras avec 8 chats à Thetford Mines.',
             'Crème-toi bien cet été.',
             'Je sais où tu habites.',
             'Ton futur est mon passé.',
-            'Retourne-toi. Je ne suis plus là.',
-            'Ne regarde pas dehors. NE REGARDE PAS!'
+            'Tu marches sur de la glace fine. Fais attention',
+            'Tu as déjà tout accompli. La chute approche',
+            'Chez Albi le Géant, tu trouveras ce que tu voudras.',
+            'Take a kayak.',
+            'Achète une Juicy Fruit.',
+            'Ne regarde pas derrière toi cette nuit!',
         ],
         chosenQuote: '',
     },
@@ -54,6 +57,8 @@ const app = new Vue({
         picker: function(){
             var chosenNumber = Math.floor(Math.random() * this.listQuotes.length);
             this.chosenQuote = this.listQuotes[chosenNumber];
+            
+            
         },
         created: function () {
             this.activeClick3 = !this.activeClick3;
