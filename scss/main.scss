@@ -53,7 +53,7 @@ body {
 
     &__quote {
         position: absolute; 
-        top: 50%;
+        top: 40%;
         width: 100%;
         font-size: 1.5rem;
         user-select: none;
@@ -154,6 +154,10 @@ body {
 @media only screen and (max-width: 450px) {
     .container__images {
         padding-top: 50vh;
+    }
+
+    .container__quote {
+        top: 30%;
     }
 }
 

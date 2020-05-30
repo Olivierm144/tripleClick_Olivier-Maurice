@@ -23,6 +23,7 @@ const app = new Vue({
             'Achète une Juicy Fruit.',
             'Ne regarde pas derrière toi cette nuit!',
         ],
+  
         chosenQuote: '',
     },
     methods: {
