@@ -11,19 +11,18 @@ const app = new Vue({
         imageIsVisible: true,
         listQuotes: [
             'En septembre, tu seras peut-être déconfiné. Ou pas...',
-            'Ta vie se résume à remplir ta timesheet. Tous les jours.',
+            'Ta vie se résume à remplir une timesheet.',
             'Tu finiras avec 8 chats à Thetford Mines.',
             'Crème-toi bien cet été.',
             'Je sais où tu habites.',
             'Ton futur est mon passé.',
-            'Tu marches sur de la glace fine. Fais attention',
+            'Tu marches sur de la glace fine. Fais attention.',
             'Tu as déjà tout accompli. La chute approche',
             'Chez Albi le Géant, tu trouveras ce que tu voudras.',
-            'Take a kayak.',
             'Achète une Juicy Fruit.',
             'Ne regarde pas derrière toi cette nuit!',
         ],
-  
+        currentQuotes: [],
         chosenQuote: '',
     },
     methods: {
@@ -56,8 +55,12 @@ const app = new Vue({
             }
         },
         picker: function(){
-            var chosenNumber = Math.floor(Math.random() * this.listQuotes.length);
-            this.chosenQuote = this.listQuotes[chosenNumber];
+            if(this.currentQuotes.length == 0) {
+                Array.prototype.push.apply(this.currentQuotes, this.listQuotes);
+            } 
+            var chosenNumber = Math.floor(Math.random() * this.currentQuotes.length);
+            this.chosenQuote = this.currentQuotes[chosenNumber];
+            this.currentQuotes.splice(chosenNumber,1);
             
             
         },
